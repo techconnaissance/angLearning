@@ -1,18 +1,20 @@
-<html ng-app="routing">
-<head>
-	<!-- Angular -->
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.js"></script>
-  <!-- UI-Router -->
-  <script src="//angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
-  
-  <script src="js/script.js"></script>
-</head>
-<body>
-<ul>
-	<li> <a href='#/home'> Home </a> </li>
-	<li> <a ui-sref="login"> Login </a> </li>
-</ul>
+<form name="login.userForm" ng-submit="login.submitUser(login.user)">
+	<div class="loginmodal-container">
+			<h1>Login to Your Account</h1><br>
+		  <form>
+			<input type="text" name="user" placeholder="Username" ng-model="login.user.username" required>
+			<input type="password" name="pass" placeholder="Password" ng-model="login.user.password" required>
+			<input type="submit" name="login" class="login loginmodal-submit" value="Login">
+		  </form>
+			
+		  <div class="login-help">
+			<a href="#">Register</a> - <a href="#">Forgot Password</a>
+		  </div>
+		</div>
+	</div>
+</form>
 
-      <ui-view></ui-view>
-  </body>
-</html>
+<h1> typed data </h1>
+{{login.user}}
+<h1>Form </h1>
+{{login.userForm}}

@@ -1,2 +1,12 @@
 
 <h1> Welcome to Ababab Space </h1>
+
+
+Current Department: {{home.currentDepartment}}
+<br/>
+<br/>
+<div class="container">
+    <div class="notice notice-success" ng-repeat="dept in home.departments" ng-click="home.setCurrentDepartment(dept)">
+        <strong>{{dept.name}}</strong> {{dept.description}}
+    </div>
+</div>

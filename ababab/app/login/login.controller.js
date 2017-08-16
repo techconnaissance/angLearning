@@ -1,25 +1,15 @@
 'use strict';
 
-var myApp = angular.module('routing', ['ui.router']);
-
-myApp.config(function($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise('/home');
-  
-  $stateProvider
-	.state('login', {
-		url: '/login',
-		templateUrl: 'login.html'
-	})
-	.state('home', {
-            url: '/home',
-            templateUrl: 'home.html'
-    })
+angular.module('ababab').controller('LoginCtrl', function () {
+	var login = this;
 	
-	.state('home.login', {
-              url: "/working",
-              templateUrl: "home.hlogin.html",
-              controller: function($scope){
-                $scope.items = ["A", "List", "Of", "Items"];
-              }
-    })
-});
+	login.user = {
+		username: '',
+		password: ''
+	}
+	
+	login.submitUser = function (user) {
+		console.log(user);
+		login.currentUser = user;
+	}
+})

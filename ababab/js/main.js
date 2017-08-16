@@ -12,5 +12,21 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 		controller: 'HomeCtrl',
         controllerAs: 'home'
 	})
+	.state('about', {
+		url: '/about',
+		templateUrl: 'app/about/about.tmpl.html',
+		controller: 'AboutCtrl',
+        controllerAs: 'about'
+	})
+	.state('login', {
+		url: '/login',
+		templateUrl: 'app/login/login.tmpl.html',
+		controller: 'LoginCtrl',
+        controllerAs: 'login'
+	})
 	
 });
+
+myApp.config(['$qProvider', function ($qProvider) {
+    $qProvider.errorOnUnhandledRejections(false);
+}]);
